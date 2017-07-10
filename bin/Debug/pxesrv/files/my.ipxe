@@ -1,0 +1,70 @@
+#!ipxe
+
+set boot-root http://${dhcp-server}
+set isope-root	${boot-root}/isope
+set wimpe-root	${boot-root}/wimpe
+set menu-timeout 5000
+set submenu-timeout ${menu-timeout}
+isset ${menu-default} || set menu-default exit
+
+######## MAIN MENU ###################
+:start
+menu Welcome to BH PXE Install Windows Tools
+item
+item
+item loadisope	Load_ISO_Win10PE
+item loadisowin8re	Load_ISO_Win8.1RE
+item uefi	UEFI	Boot
+item bios	BIOS	Boot
+item grub4dos		brub4dos
+item loadimg		loadimg
+item
+item shell iPEX Shell
+item reboot Reboot
+item exit Boot Local Disk
+choose --default Load_ISO_Win10PE --timeout 2000 target && goto ${target}
+
+:shell
+echo Type exit to get the back to the menu
+shell
+set menu-timeout 0
+goto start
+
+:reboot
+reboot
+
+
+:uefi
+kernel ${boot-url}/wimboot
+initrd ${wimpe-root}/win8/bootmgr.efi							bootmgr.efi
+initrd ${wimpe-root}/win8/EFI/MICROSOFT/BOOT/BCD		BCD
+initrd ${wimpe-root}/win8/BOOT/BOOT.SDI						BOOT.SDI
+initrd ${wimpe-root}/win8/SOURCES/BOOT.WIM					BOOT.WIM
+boot
+
+:bios
+kernel	${boot-url}/wimboot	pause
+initrd	-n	bootmgr	${wimpe-root}/win8/bootmgr	bootmgr
+initrd	-n	bcd	${wimpe-root}/win8/BOOT/bcd	bcd
+initrd	-n	bcd.sdi	${wimpe-root}/win8/BOOT/BOOT.SDI	BOOT.SDI
+initrd	-n	boot.wim	${wimpe-root}/win8/SOURCES/BOOT.WIM		BOOT.WIM
+boot
+
+:grub4dos
+kernel grldr
+boot
+
+:loadimg
+sanboot ${boot-url}/winre.iso
+
+
+:loadisope
+# dhcp net0
+initrd ${isope-root}/win10netinst.iso
+kernel ${boot-root}/memdisk iso raw
+boot
+
+:loadisowin8re
+initrd ${isope-root}/win8re.iso
+kernel ${boot-root}/memdisk iso raw
+boot

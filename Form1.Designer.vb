@@ -34,6 +34,7 @@ Partial Class Form1
         Me.Button_uninstall = New System.Windows.Forms.Button()
         Me.Button_install = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage_manage.SuspendLayout()
         Me.TabPage_install.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class Form1
         'Label_serivice_status
         '
         Me.Label_serivice_status.AutoSize = True
+        Me.Label_serivice_status.ForeColor = System.Drawing.Color.Red
         Me.Label_serivice_status.Location = New System.Drawing.Point(83, 412)
         Me.Label_serivice_status.Name = "Label_serivice_status"
         Me.Label_serivice_status.Size = New System.Drawing.Size(29, 12)
@@ -156,11 +158,21 @@ Partial Class Form1
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Ver 0.1 By:疯掉的兔子"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(160, 407)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "刷新服务状态"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(566, 433)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label_serivice_status)
@@ -187,4 +199,5 @@ Partial Class Form1
     Friend WithEvents Button_uninstall As Button
     Friend WithEvents Button_install As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class
