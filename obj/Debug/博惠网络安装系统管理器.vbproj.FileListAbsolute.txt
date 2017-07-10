@@ -1,0 +1,10 @@
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\bin\Debug\博惠网络安装系统管理器.exe
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\bin\Debug\博惠网络安装系统管理器.pdb
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\bin\Debug\博惠网络安装系统管理器.xml
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.vbprojResolveAssemblyReference.cache
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.Form1.resources
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.Resources.resources
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.vbproj.GenerateResource.Cache
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.exe
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.xml
+E:\Projects\uboot\BHpxe\博惠网络安装系统管理器\obj\Debug\博惠网络安装系统管理器.pdb
